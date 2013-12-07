@@ -7,13 +7,15 @@ public class Person implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -1214988621599209906L;
-	private int id;
-	private String name;
-	private String sex;
-	private String email;
-	private int age;
-	private int mobilephone;
-	private String manager;
+	private int id;//用户id
+	private String name;//用户姓名
+	private String sex;//用户性别
+	private String email;//用户email
+	private int age;//用户年龄
+	private int mobilephone;//用户手机号码
+	private String manager;//职位
+	public Person(){
+	}
 	public int getId() {
 		return id;
 	}
