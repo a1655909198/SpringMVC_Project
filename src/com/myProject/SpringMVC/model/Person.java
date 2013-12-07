@@ -1,4 +1,4 @@
-package com.leitian.SpringMVC.model;
+package com.myProject.SpringMVC.model;
 
 import java.io.Serializable;
 
