@@ -19,11 +19,12 @@ public class ShowController {
 	 * @param
 	 * @return
 	 * */
-	@RequestMapping(value="/",method=RequestMethod.GET)
+	@RequestMapping(value="/home",method=RequestMethod.GET)
 	public ModelAndView index(HttpServletRequest request,HttpServletResponse response){
 		ModelMap map = new ModelMap();
 		String str="android";
 		map.addAttribute("name",str);
+		System.out.println("android:"+str);
 		return new ModelAndView("index",map);
 	}
 }
