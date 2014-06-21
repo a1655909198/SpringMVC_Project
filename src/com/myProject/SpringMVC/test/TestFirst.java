@@ -1,5 +1,4 @@
 package com.myProject.SpringMVC.test;
-import java.util.Date;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -7,10 +6,13 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.myProject.SpringMVC.model.Person;
 
 public class TestFirst {
+	private static Logger LOGGER  = LoggerFactory.getLogger(TestFirst.class);
 
 	@Test
 	public void test01() {
@@ -32,7 +34,8 @@ public class TestFirst {
 			//提交事务
 			session.getTransaction().commit();
 		} catch (HibernateException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			LOGGER.error("HibernateException:",e.fillInStackTrace());
 			if(session!=null) session.getTransaction().rollback();
 		} finally {
 			if(session!=null) session.close();
